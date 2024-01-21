@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": "1",
+      "id": "34cfc",
       "title": "Tale of Two Cities",
       "author": "Charles Dickens",
       "description": "Great Book",
@@ -10,7 +10,7 @@
       "genre": "Historical fiction"
     },
     {
-      "id": "2",
+      "id": "7cfbn",
       "title": "The Little Prince",
       "author": "Antoine de Saint-Exupéry",
       "description": "Great Book",
@@ -28,7 +28,7 @@
       "genre": "Fantasy, Children's fiction"
     },
     {
-      "id": "4",
+      "id": "74fb",
       "title": "Dream of the Red Chamber",
       "author": "Cao Xueqin",
       "description": "Great Book",
@@ -37,7 +37,7 @@
       "genre": "Family saga"
     },
     {
-      "id": "5",
+      "id": "98cfc",
       "title": "She: A History of Adventure",
       "author": "H. Rider Haggard",
       "description": "Great Book",
@@ -46,67 +46,13 @@
       "genre": "Adventure"
     },
     {
-      "id": "6",
+      "id": "3cfc",
       "title": "And Then There Were None",
       "author": "Agatha Christie",
       "description": "Great Book",
       "pages": 355,
       "language": "English",
       "genre": "Mystery"
-    },
-    {
-      "id": "e861",
-      "title": "vaxxx",
-      "author": "J. K. Rowling",
-      "description": "ssss",
-      "pages": 222,
-      "language": "armenian",
-      "genre": "22233dfvfvf"
-    },
-    {
-      "id": "7cfc",
-      "title": "dfd",
-      "author": "Charles Dickens",
-      "description": "dfd",
-      "pages": 4444,
-      "language": "armenian",
-      "genre": "reref"
-    },
-    {
-      "id": "fe6e",
-      "title": "sss",
-      "author": "Charles Dickens",
-      "description": "ddd",
-      "pages": 3222,
-      "language": "russian",
-      "genre": "dede"
-    },
-    {
-      "id": "bb88",
-      "title": "njnjn",
-      "author": "J. K. Rowling",
-      "description": "nbnb",
-      "pages": 2222,
-      "language": "armenian",
-      "genre": "www"
-    },
-    {
-      "id": "a2d7",
-      "title": "dcd",
-      "author": "Charles Dickens",
-      "description": "dcc",
-      "pages": 222,
-      "language": "russian",
-      "genre": "dfdfd"
-    },
-    {
-      "id": "b8f4",
-      "title": "sddsd",
-      "author": "ove",
-      "description": "sdsd",
-      "pages": 121,
-      "language": "russian",
-      "genre": "dsdsd"
     }
   ],
   "authors": [
@@ -133,22 +79,6 @@
     {
       "id": "3423c4d",
       "name": "Agatha Christie"
-    },
-    {
-      "id": "1af1",
-      "name": "aziz"
-    },
-    {
-      "id": "368a",
-      "name": "sassss"
-    },
-    {
-      "id": "8f7b",
-      "name": "ooooooooooosddssdsdoooo"
-    },
-    {
-      "id": "8533",
-      "name": "ove"
     }
   ]
 }
