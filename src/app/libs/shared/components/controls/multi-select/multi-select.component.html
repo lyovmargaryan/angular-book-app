@@ -1,0 +1,52 @@
+<mat-form-field
+  class="autocomplete-form-field relative"
+  [style.min-height]="minHeightPx ? maxHeightPx + 'px' : 'unset'"
+  [style.max-height.px]="maxHeightPx"
+  [class.overflow-auto]="maxHeightPx"
+  [class.disable-subscript-wrapper]="
+    isDisableSubscriptWrapper && (selectedDataItems$ | async)?.length
+  "
+>
+  <mat-chip-grid #chipListElem>
+    <mat-chip-row
+      [disabled]="disabled$ | async"
+      *ngFor="
+        let selected of selectedDataItems$ | async;
+        trackBy: selectedDataItemsTrackByFn
+      "
+      (removed)="onRemove(selected)"
+    >
+      <span>{{ (dataMap$ | async)![selected] }}</span>
+      <button matChipRemove>
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-chip-row>
+    <input
+      matInput
+      #inputElement
+      [formControl]="inputControl"
+      [placeholder]="$any(placeholder$ | async)"
+      [matAutocomplete]="autocompleteElem"
+      [matChipInputFor]="chipListElem"
+      [matAutocompleteDisabled]="false"
+      (keyup.enter)="onInputKeyupEnter()"
+    />
+  </mat-chip-grid>
+  <mat-autocomplete
+    #autocompleteElem="matAutocomplete"
+    (optionSelected)="onSelected($event)"
+    (opened)="onAutocompletePanelOpened()"
+    (closed)="onAutocompletePanelClosed()"
+  >
+    <mat-option
+      *ngFor="
+        let dataItem of filteredData$ | async;
+        trackBy: filteredDataTrackByFn
+      "
+      [value]="dataItem.value"
+      [disabled]="dataItem.disabled"
+    >
+      {{ dataItem.name }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

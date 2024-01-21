@@ -1,0 +1,46 @@
+<div class="elastic-table-container mat-elevation-z0" tabindex="0">
+  <table
+    mat-table
+    matSort
+    class="elastic-table"
+    [dataSource]="authors"
+    [trackBy]="trackByFn"
+    [matSortDisableClear]="true"
+    [matSortActive]="sort.sortBy"
+    [matSortDirection]="sort.sortDirection"
+    (matSortChange)="onSortChange($event)"
+  >
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let author">
+        {{ author.id }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-sort-header="id" mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let author">
+        {{ author.name }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let author">
+        <button
+          (click)="onOpenUpdateDialog(author)"
+          mat-flat-button
+          color="warn"
+        >
+          Update
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+    ></tr>
+  </table>
+</div>

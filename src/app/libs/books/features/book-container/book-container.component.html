@@ -1,0 +1,67 @@
+<div class="flex justify-between mb-3">
+  <h1>Books</h1>
+
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loaded">
+    <app-create-book
+      [books]="books$ | async"
+      [authors]="authors$ | async"
+      (createBook)="onCreateBook($event)"
+    >
+    </app-create-book>
+  </ng-container>
+</div>
+
+<section class="main-wrapper">
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loading ||
+                        (selectAuthorsCallState$ | async) === callState.Loading"
+  >
+    <div class="flex justify-center items-center" [style.height]="50">
+      <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+  </ng-container>
+
+  <ng-container
+    *ngIf="(selectCallState$ | async) === callState.Loaded &&
+            (selectAuthorsCallState$ | async) === callState.Loaded"
+  >
+    <app-book-filters
+      *ngIf="(authors$ |  async)?.length"
+      [filters]="filters$ | async"
+      [authors]="authors$ | async"
+      (filtersChanged)="onFiltersChanged($event)"
+    ></app-book-filters>
+
+    <app-book-details
+      *ngIf="(paginatedBooks$ | async)?.length"
+      [sort]="sort$ | async"
+      (sortChange)="onSortChange($event)"
+      [books]="paginatedBooks$ | async"
+    ></app-book-details>
+
+    <ng-container *ngIf="!(paginatedBooks$ | async)?.length">
+      <div class="pt-3 pb-3">
+        No books found matching the criteria
+      </div>
+    </ng-container>
+
+    <div
+      *ngIf="(paginatedBooks$ | async)?.length"
+      class=""
+    >
+      <mat-paginator
+        *ngIf="paginator$ | async as paginator"
+        [pageIndex]="paginator.pageIndex"
+        [pageSize]="paginator.pageSize"
+        [pageSizeOptions]="paginator.pageOptions"
+        [length]="(books$ | async)?.length"
+        (page)="onPaginate($event)"
+      >
+      </mat-paginator>
+    </div>
+  </ng-container>
+</section>
+
+<app-authors-container></app-authors-container>
+
+
+

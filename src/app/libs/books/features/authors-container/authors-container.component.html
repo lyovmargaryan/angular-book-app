@@ -1,0 +1,49 @@
+<div class="flex justify-between mb-3 mt-10">
+  <h1>Authors</h1>
+
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loaded">
+    <app-create-author
+      [authors]="authors$ | async"
+      (createAuthor)="onCreateAuthor($event)"
+    >
+    </app-create-author>
+  </ng-container>
+</div>
+
+<section class="main-wrapper">
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loading">
+    <div class="flex justify-center items-center" [style.height]="50">
+      <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loaded">
+  <app-author-details
+    *ngIf="(paginatedAuthors$ | async)?.length"
+    [sort]="sort$ | async"
+    [authors]="paginatedAuthors$ | async"
+    (sortChange)="onSortChange($event)"
+  ></app-author-details>
+
+    <ng-container *ngIf="!(paginatedAuthors$ | async)?.length">
+      <div class="pt-3 pb-3">
+        No authors found matching the criteria
+      </div>
+    </ng-container>
+
+    <div
+      *ngIf="(paginatedAuthors$ | async)?.length"
+      class=""
+    >
+      <mat-paginator
+        *ngIf="paginator$ | async as paginator"
+        [pageIndex]="paginator.pageIndex"
+        [pageSize]="paginator.pageSize"
+        [pageSizeOptions]="paginator.pageOptions"
+        [length]="(authors$ | async)?.length"
+        (page)="onPaginate($event)"
+      >
+      </mat-paginator>
+    </div>
+  </ng-container>
+</section>

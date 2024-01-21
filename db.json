@@ -1,0 +1,154 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Tale of Two Cities",
+      "author": "Charles Dickens",
+      "description": "Great Book",
+      "pages": 300,
+      "language": "English",
+      "genre": "Historical fiction"
+    },
+    {
+      "id": "2",
+      "title": "The Little Prince",
+      "author": "Antoine de Saint-Exupéry",
+      "description": "Great Book",
+      "pages": 456,
+      "language": "English",
+      "genre": "Fantasy, Children's fiction"
+    },
+    {
+      "id": "3",
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J. K. Rowling",
+      "description": "Great Book",
+      "pages": 233,
+      "language": "English",
+      "genre": "Fantasy, Children's fiction"
+    },
+    {
+      "id": "4",
+      "title": "Dream of the Red Chamber",
+      "author": "Cao Xueqin",
+      "description": "Great Book",
+      "pages": 600,
+      "language": "Chinese",
+      "genre": "Family saga"
+    },
+    {
+      "id": "5",
+      "title": "She: A History of Adventure",
+      "author": "H. Rider Haggard",
+      "description": "Great Book",
+      "pages": 550,
+      "language": "English",
+      "genre": "Adventure"
+    },
+    {
+      "id": "6",
+      "title": "And Then There Were None",
+      "author": "Agatha Christie",
+      "description": "Great Book",
+      "pages": 355,
+      "language": "English",
+      "genre": "Mystery"
+    },
+    {
+      "id": "e861",
+      "title": "vaxxx",
+      "author": "J. K. Rowling",
+      "description": "ssss",
+      "pages": 222,
+      "language": "armenian",
+      "genre": "22233dfvfvf"
+    },
+    {
+      "id": "7cfc",
+      "title": "dfd",
+      "author": "Charles Dickens",
+      "description": "dfd",
+      "pages": 4444,
+      "language": "armenian",
+      "genre": "reref"
+    },
+    {
+      "id": "fe6e",
+      "title": "sss",
+      "author": "Charles Dickens",
+      "description": "ddd",
+      "pages": 3222,
+      "language": "russian",
+      "genre": "dede"
+    },
+    {
+      "id": "bb88",
+      "title": "njnjn",
+      "author": "J. K. Rowling",
+      "description": "nbnb",
+      "pages": 2222,
+      "language": "armenian",
+      "genre": "www"
+    },
+    {
+      "id": "a2d7",
+      "title": "dcd",
+      "author": "Charles Dickens",
+      "description": "dcc",
+      "pages": 222,
+      "language": "russian",
+      "genre": "dfdfd"
+    },
+    {
+      "id": "b8f4",
+      "title": "sddsd",
+      "author": "ove",
+      "description": "sdsd",
+      "pages": 121,
+      "language": "russian",
+      "genre": "dsdsd"
+    }
+  ],
+  "authors": [
+    {
+      "id": "34c4d",
+      "name": "Charles Dickens"
+    },
+    {
+      "id": "34crd",
+      "name": "Antoine de Saint-Exupéry"
+    },
+    {
+      "id": "34c4df",
+      "name": "J. K. Rowling"
+    },
+    {
+      "id": "34sdc4d",
+      "name": "Cao Xueqin"
+    },
+    {
+      "id": "3v4c4d",
+      "name": "H. Rider Haggard"
+    },
+    {
+      "id": "3423c4d",
+      "name": "Agatha Christie"
+    },
+    {
+      "id": "1af1",
+      "name": "aziz"
+    },
+    {
+      "id": "368a",
+      "name": "sassss"
+    },
+    {
+      "id": "8f7b",
+      "name": "ooooooooooosddssdsdoooo"
+    },
+    {
+      "id": "8533",
+      "name": "ove"
+    }
+  ]
+}

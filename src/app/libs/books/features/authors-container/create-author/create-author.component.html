@@ -1,0 +1,63 @@
+<div>
+  <button
+    (click)="onShowCreateModal(showCreateModal)"
+    mat-flat-button
+    color="primary"
+    class="uppercase"
+  >
+    Create New Author
+    <mat-icon>add_circle</mat-icon>
+  </button>
+</div>
+
+<ng-template #showCreateModal>
+  <app-dialog-frame
+    [customHeader]="true"
+    [customFooter]="true"
+    class="w-[720px] block create-discount-dialog"
+  >
+    <h3 header class="dialog-title !m-0">Create New Author</h3>
+    <mat-icon header (click)="onClose()" class="cursor-pointer"
+    >close
+    </mat-icon>
+
+    <form [formGroup]="form">
+      <div
+        class="form-group grid-cols-[1fr_4fr] required grid gap-8 mb-3"
+      >
+        <label
+          for="author"
+          class="font-bold mt-4 cursor-pointer">
+          Author*
+        </label>
+          <mat-form-field class="w-full">
+            <input
+              required
+              matInput
+              autocomplete="off"
+              formControlName="name"
+              id="author"
+            />
+          <mat-error
+            *ngIf="form.get('name').invalid && (form.get('name').dirty || form.get('name').touched)">
+            {{ form.get('name') | errorMessage : 'Author' }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+
+    <button (click)="onClose()" footer mat-flat-button color="">
+      Cancel
+    </button>
+    <button
+      (click)="onCreate()"
+      [disabled]="form.get('name').invalid"
+      footer
+      mat-flat-button
+      color="primary"
+      class="ml-2"
+    >
+      Create
+    </button>
+  </app-dialog-frame>
+</ng-template>

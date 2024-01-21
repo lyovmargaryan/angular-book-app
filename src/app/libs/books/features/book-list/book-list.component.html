@@ -1,0 +1,19 @@
+<div class="main-wrapper">
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loading">
+    <div class="flex justify-center items-center" [style.height]="50">
+      <mat-spinner [diameter]="30"></mat-spinner>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="(selectCallState$ | async) === callState.Loaded">
+    <div *ngIf="(book$ | async) as data" class="gap-3">
+      <h2><strong>Book:</strong> {{ data.book.id }}</h2>
+      <p><strong>Title:</strong> {{ data.book.title }}</p>
+      <p><strong>author:</strong> {{ data.book.author }}</p>
+      <p><strong>description:</strong> {{ data.book.description }}</p>
+      <p><strong>pages:</strong> {{ data.book.pages }}</p>
+      <p><strong>language:</strong> {{ data.book.language }}</p>
+      <p><strong>genre:</strong> {{ data.book.genre }}</p>
+    </div>
+  </ng-container>
+</div>

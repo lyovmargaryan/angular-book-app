@@ -1,0 +1,71 @@
+<div class="py-[24px] px-[20px]" [style.max-width]="maxWidth">
+  <header
+    #header
+    class="flex justify-between w-full mb-10 px-[4px] break-all"
+    [ngClass]="flexCenter ? 'items-center' : 'items-start'"
+  >
+    <ng-container *ngIf="!customHeader">
+      <h3 class="dialog-title !mr-3 !m-0">{{ headerTitle }}</h3>
+      <button
+        class="close-btn self-center"
+        [mat-dialog-close]="undefined"
+        (click)="close$.emit()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </ng-container>
+    <ng-content select="[header]"></ng-content>
+  </header>
+  <div
+    class="overflow-auto px-[4px] dialog-frame-body"
+    [style.max-height]="
+      'calc(90vh - ' +
+      ((header.offsetHeight ?? 0) + (footer.offsetHeight ?? 0) + 160) +
+      'px)'
+    "
+  >
+    <ng-content></ng-content>
+  </div>
+  <footer
+    #footer
+    class="flex flex-wrap w-full items-center down-md:justify-center md:justify-end mt-10 px-[4px]"
+  >
+    <ng-container *ngIf="!customFooter">
+      <button
+        *ngIf="footerWithWorn"
+        [disabled]="disabled"
+        mat-flat-button
+        color="warn"
+        class="uppercase !mr-auto"
+        (click)="wornBtn$.emit()"
+      >
+        {{ wornBtnText }}
+      </button>
+
+      <button
+        mat-flat-button
+        cdkFocusInitial
+        class="uppercase !ml-2"
+        (click)="secondaryBtn$.emit()"
+      >
+        {{ secondaryBtnText }}
+      </button>
+
+      <button
+        *ngIf="footerWithPrimary"
+        mat-flat-button
+        color="primary"
+        [disabled]="disabled"
+        class="uppercase !ml-2"
+        (click)="primaryBtn$.emit()"
+      >
+        {{ primaryBtnText }}
+        <mat-icon *ngIf="btnIcon" class="!h-[15px] !w-[15px] text-[14px]">{{
+            btnIcon
+          }}</mat-icon>
+      </button>
+    </ng-container>
+
+    <ng-content select="[footer]"></ng-content>
+  </footer>
+</div>

@@ -1,0 +1,7 @@
+.overflow-auto::-webkit-scrollbar {
+  width: 18px
+}
+.overflow-auto::-webkit-scrollbar-thumb {
+  border-left: 15px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}

@@ -1,0 +1,54 @@
+<app-dialog-frame
+  [customHeader]="true"
+  [customFooter]="true"
+  class="w-[520px] block"
+>
+  <h3 header class="dialog-title !m-0">Update Author</h3>
+  <mat-icon header (click)="onClose()" class="cursor-pointer">close </mat-icon>
+
+  <div>
+    <form [formGroup]="form">
+      <div
+        class="form-group grid-cols-[1fr_4fr] required grid gap-8 mb-3"
+      >
+        <label
+          for="author"
+          class="font-bold mt-4 cursor-pointer">
+          Author*
+        </label>
+        <mat-form-field class="w-full">
+          <input
+            required
+            matInput
+            autocomplete="off"
+            formControlName="name"
+            id="author"
+          />
+          <mat-error
+            *ngIf="form.get('name').invalid && (form.get('name').dirty || form.get('name').touched)">
+            {{ form.get('name') | errorMessage : 'Author' }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+
+  <button
+    (click)="onClose()"
+    footer
+    mat-flat-button
+    color=""
+  >
+    Cancel
+  </button>
+  <button
+    (click)="onUpdate()"
+    [disabled]="form.invalid"
+    footer
+    mat-flat-button
+    color="warn"
+    class="!flex items-center justify-between !ml-2"
+  >
+    Update
+  </button>
+</app-dialog-frame>

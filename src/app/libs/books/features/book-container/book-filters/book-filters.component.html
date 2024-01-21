@@ -1,0 +1,92 @@
+<form [formGroup]="form" class="mt-4 mb-8">
+  <section class="grid grid-cols-[repeat(2,1fr)] gap-x-8">
+    <div class="flex items-center gap-x-4">
+      <label for="title" class="font-bold cursor-pointer min-w-[70px]"
+      >Search:</label
+      >
+      <mat-form-field class="w-96 relative top-2">
+        <div class="flex items-center">
+          <mat-icon matPrefix class="mr-2 mt-1 cursor-pointer">search</mat-icon>
+          <input
+            matInput
+            placeholder="Search by title, description"
+            formControlName="title"
+            id="title"
+          />
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="flex items-center gap-x-4">
+      <label class="font-bold min-w-[70px]">Author:</label>
+      <app-multi-select
+        class="w-96 relative top-2"
+        formControlName="author"
+        [data]="selectAuthors"
+        [placeholder]="'Select...'"
+      >
+      </app-multi-select>
+    </div>
+
+    <div class="flex items-center gap-x-4">
+      <label class="font-bold min-w-[70px]">Language:</label>
+      <app-multi-select
+        class="w-96 relative top-2"
+        formControlName="language"
+        [data]="selectLanguages"
+        [placeholder]="'Select...'"
+      >
+      </app-multi-select>
+    </div>
+
+    <div class="flex items-center gap-x-4">
+      <label for="title" class="font-bold cursor-pointer min-w-[70px]"
+      >Genre:</label
+      >
+      <mat-form-field class="w-96 relative top-2">
+        <div class="flex items-center">
+          <input
+            matInput
+            placeholder="Search by genre"
+            formControlName="genre"
+            id="genre"
+          />
+        </div>
+      </mat-form-field>
+    </div>
+  </section>
+  <div class="flex justify-between w-44 gap-x-4">
+    <div class="flex items-center gap-x-4">
+      <label for="fromPages" class="font-bold cursor-pointer min-w-[70px]"
+      >From:</label
+      >
+      <mat-form-field class="w-44 relative top-2">
+        <div class="flex items-center">
+          <input
+            type="number"
+            matInput
+            placeholder="From"
+            formControlName="fromPages"
+            id="fromPages"
+          />
+        </div>
+      </mat-form-field>
+    </div>
+    <div class="flex items-center gap-x-4">
+      <label for="toPages" class="font-bold cursor-pointer"
+      >To:</label
+      >
+      <mat-form-field class="w-44 relative top-2">
+        <div class="flex items-center">
+          <input
+            type="number"
+            matInput
+            placeholder="To"
+            formControlName="toPages"
+            id="toPages"
+          />
+        </div>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
