@@ -14,7 +14,7 @@ export function filterBooks(
     }
 
     if (filters.language?.length) {
-      match = filters.language.includes(book.language);
+      match = filters.language.includes(book.language.toLowerCase());
     }
 
     if (match && filters?.title) {
